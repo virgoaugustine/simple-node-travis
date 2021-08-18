@@ -1,0 +1,18 @@
+language: node_js
+node_js:
+  - 13
+
+services:
+  - docker
+
+before_script:
+  - npm install
+
+script:
+  - docker --version # Print docker version
+  - docker build -t simple-node-travis
+  - docker tag simple-node-travis "$DOCKER_HUB"/simple-node-travis:latest
+
+after_success:
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - docker push "$DOCKER_HUB"/simple-node-travis:latest
