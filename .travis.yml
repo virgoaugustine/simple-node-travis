@@ -5,7 +5,7 @@ node_js:
 services:
   - docker
 
-before_sript:
+before_script:
   -echo 'Nothing to test'
 
 script:
