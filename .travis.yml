@@ -6,7 +6,7 @@ services:
   - docker
 
 before_script:
-  -echo 'Nothing to test'
+  - echo 'Nothing to test'
 
 script:
   - docker --version # Print docker version
