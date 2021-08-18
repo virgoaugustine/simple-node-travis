@@ -5,8 +5,8 @@ node_js:
 services:
   - docker
 
-before_script:
-  - npm install
+before_sript:
+  -echo 'Nothing to test'
 
 script:
   - docker --version # Print docker version
