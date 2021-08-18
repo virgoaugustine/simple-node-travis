@@ -10,7 +10,7 @@ before_script:
 
 script:
   - docker --version # Print docker version
-  - docker build -t simple-node-travis
+  - docker build -t simple-node-travis .
   - docker tag simple-node-travis "$DOCKER_HUB"/simple-node-travis:latest
 
 after_success:
